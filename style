@@ -1,0 +1,210 @@
+
+
+
+body
+{
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+        "header header"
+        "sidebar main"
+        "footer footer";
+    min-height: 100vh ;
+    background-color: rgb(33, 43, 43);
+    background-repeat: repeat;
+    background-size: auto;
+    color: rgb(255, 255, 255);
+
+    
+}
+
+header
+{
+    grid-area: header;
+    
+}
+.sidebar
+{
+    grid-area: sidebar;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease, visibility 0.3s ease;
+    z-index: 100;
+    left: -250px;
+    position: absolute;
+}
+
+.sidebar.active
+{
+    left: 0;
+    visibility: visible;
+    opacity: 1;
+}
+
+main
+{
+    grid-area: main;
+    
+}
+
+footer
+{
+    grid-area: footer;
+    
+}
+
+img
+{
+    width: 80%;
+    border-radius: 5vw;
+}
+
+@font-face
+{
+    font-family: 'HUNoodles';
+    src: ('HUNoodles');
+    src: url('font/HUNoodles-Bold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+p
+{
+    background-color: rgb(39, 40, 73);
+    padding: 2em;
+    font-family: 'HUNoodles', sans-serif;
+    border-radius: 5vw;
+    width: 70%;
+
+}
+
+nav > ul
+{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(52, 56, 100);
+    border-radius: 2vw;
+    height: 50vh;
+    justify-content: space-between;
+    margin: 10px 20px 0px 0;
+    padding: 2em 0 2em 1em;
+    
+}
+
+nav > ul > li
+{
+    list-style-type: none;
+
+}
+
+nav > ul > li > a
+{
+    color: white;
+    text-decoration: none;
+    font-family: 'HUNoodles', sans-serif;
+    
+}
+
+h1
+{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(52, 56, 100);
+    border-radius: 2vw;
+    margin: 10px 20px 0px 0;
+     
+}
+
+@keyframes color-change {
+  0%   { color: blue; }
+  50%  { color: rgb(37, 197, 176); }
+  100% { color: blue; }
+}
+
+
+h1 > a
+{
+    color: white;
+    text-decoration: none;
+    font-family: 'HUNoodles', sans-serif;
+    padding: 1rem;
+}
+
+.burcer-menu
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    z-index: 4;
+
+}
+
+.burcer-menu span
+{
+    width: 100%;
+    height: 3px;
+    background-color: rgb(60, 85, 196);
+    transition: all 0.3s ease;
+
+}
+
+.overlar
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 3;
+}
+
+.overlar.active
+{
+    opacity: 1;
+    visibility: visible;
+}
+
+.burcer-menu.active span:nth-child(1)
+{
+transform: translateY(8px) rotate(45deg);
+}
+
+.burcer-menu.active span:nth-child(2)
+{
+    opacity: 0;
+}
+
+.burcer-menu.active span:nth-child(3)
+{
+transform: translateY(-8px) rotate(-45deg);
+}
+
+h2
+{
+    animation: color-change 3s infinite;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(52, 56, 100);
+    border-radius: 2vw;
+    margin: 10px 20px 0px 0;
+}
+
+h3
+{
+    animation: color-change 3s infinite;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(52, 56, 100);
+    border-radius: 2vw;
+    margin: 10px 20px 0px 0;
+}
